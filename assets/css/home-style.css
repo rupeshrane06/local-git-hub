@@ -182,20 +182,20 @@
 }
 
 /* SKETCH */
-.sketch-layer {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-}
-.sketch-layer svg {
-    width: 100%;
-    height: 100vh;
-    transform: scale(0.75);
-}
-/* REAL */
+.sketch-layer,
 .real-layer {
     position: absolute;
     inset: 0;
+}
+
+/* SKETCH fully visible initially */
+.sketch-layer {
+    z-index: 2;
+    clip-path: inset(0% 0 0 0);
+}
+
+/* REAL hidden initially */
+.real-layer {
     z-index: 1;
     clip-path: inset(100% 0 0 0);
 }

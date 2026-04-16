@@ -1,5 +1,5 @@
 // ===============================
-// HERO BANNER (KEEP AS IS)
+// HERO BANNER ANIMATION
 // ===============================
 const heroSection = document.querySelector(".hero-banner-section");
 const banner = document.querySelector(".banner_sec");
@@ -23,13 +23,19 @@ function animateBanner() {
 
     let ease = heroCurrent * heroCurrent * (3 - 2 * heroCurrent);
 
+    // Banner scale
     banner.style.transform = `translate(-50%, -50%) scale(${1 + ease * 5})`;
+
+    // Video zoom
     video.style.transform = `scale(${1.3 - ease * 0.2})`;
 
+    // Hide banner after scroll
     if (rect.top <= -300) {
         banner.style.opacity = "0";
+        banner.style.pointerEvents = "none";
     } else {
         banner.style.opacity = "1";
+        banner.style.pointerEvents = "auto";
     }
 
     requestAnimationFrame(animateBanner);
@@ -37,7 +43,7 @@ function animateBanner() {
 
 
 // ===============================
-// FEATURE SECTION (FIXED)
+// FEATURE SECTION (JP STYLE FIX)
 // ===============================
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,39 +53,37 @@ function initFeatureAnimation() {
         scrollTrigger: {
             trigger: ".stats-feature-section",
             start: "top top",
-            end: "+=200%", // enough scroll space
+            end: "+=180%", // adjust speed here
             scrub: true,
             pin: true,
             anticipatePin: 1
         }
     });
 
-    // STEP 1: SKETCH GOES UP
+    // 🟡 SKETCH CUT FROM BOTTOM → TOP (NO MOVEMENT)
     tl.to(".sketch-layer", {
-        y: "-100%",
-        ease: "none",
-        duration: 1
+        clipPath: "inset(0% 0 100% 0)", // 🔥 correct direction
+        ease: "none"
     }, 0);
 
-    // STEP 2: REAL IMAGE REVEAL (same time)
+    // 🟢 REAL IMAGE REVEAL FROM BOTTOM → TOP
     tl.to(".real-layer", {
-        clipPath: "inset(0% 0 0 0)",
-        ease: "none",
-        duration: 1
+        clipPath: "inset(0% 0 0% 0)",
+        ease: "none"
     }, 0);
 
-    // STEP 3: TEXT APPEARS ONLY AFTER IMAGE COMPLETE
+    // 🔵 TEXT APPEARS AFTER IMAGE COMPLETE
     tl.to(".feature-section-content", {
         opacity: 1,
         y: 0,
-        duration: 0.4,
+        duration: 0.3,
         ease: "power1.out"
-    }, 0.9); // 🔥 IMPORTANT DELAY
+    }, 0.85);
 }
 
 
 // ===============================
-// SWIPER
+// PROJECT SWIPER
 // ===============================
 const swiperInstances = [];
 
@@ -99,6 +103,7 @@ function initAllSwipers() {
 }
 
 function switchTab(event, tabId) {
+
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.add('d-none');
     });
@@ -115,7 +120,7 @@ function switchTab(event, tabId) {
 
 
 // ===============================
-// GALLERY
+// GALLERY SWIPER
 // ===============================
 function initGallery() {
     new Swiper('.mainGallerySwiper', {
@@ -134,17 +139,21 @@ function initGallery() {
         pagination: {
             el: '.swiper-pagination',
             clickable: true
-        }
+        },
+        observer: true,
+        observeParents: true
     });
 }
 
 
 // ===============================
-// INIT
+// INIT (ONLY ONE ENTRY POINT)
 // ===============================
 document.addEventListener("DOMContentLoaded", function () {
-    animateBanner();
-    initFeatureAnimation(); // ✅ FIXED
-    initAllSwipers();
-    initGallery();
+
+    animateBanner();          // hero animation
+    initFeatureAnimation();   // feature animation (fixed)
+    initAllSwipers();         // project sliders
+    initGallery();            // gallery slider
+
 });
