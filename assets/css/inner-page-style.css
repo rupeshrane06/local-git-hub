@@ -1,0 +1,273 @@
+/* Container positioning */
+.banner-social-wrapper {
+    z-index: 1000;
+}
+ 
+/* Base circle style */
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.icon-circle:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Specific Brand Colors from Image */
+.bg-gold   { background-color: #bb9c59; } /* Matches Harlequin theme */
+.bg-purple { background-color: #6f42c1; }
+.bg-blue   { background-color: #0d6efd; }
+.bg-green  { background-color: #25d366; }
+
+/* Enquire Now Label */
+.action-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.action-label {
+    font-family: "MetaPro-Light";
+    background: transparent;
+    color: white;
+    font-size: 0.6rem;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+
+
+/* Brand Gold Color */
+.bg-gold {
+    background-color: #c19b67 !important;
+}
+
+/* Positioning the subnav below your main navbar */
+.subnav-wrapper.sticky-top {
+    /* Adjust this value to match the actual height of your main navbar */
+    top: 90px; 
+    z-index: 999;
+}
+
+/* Sub-Link Styling */
+.nav-link.sub-link {
+	font-family: "MetaPro-Book";
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 4px solid transparent;
+}
+
+.nav-link.sub-link:hover, 
+.nav-link.sub-link.active {
+    color: #fff !important;
+    border-bottom: 4px solid #fff;
+}
+
+/*Breadcurmb style*/
+.breadcrumb-wrapper {
+    background-color: #000; /* Solid black background */
+    padding: 15px 0;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item a {
+    color: #bb9c59; /* Theme Gold color */
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.breadcrumb-item.active {
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* The Gold Dot Separator */
+.breadcrumb-separator {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #c19b67;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Icon size adjustment */
+.breadcrumb-item i {
+    font-size: 1rem;
+    line-height: 0;
+}
+
+/*About us content start*/
+.about-content-wrap {
+	padding: 30px 0 30px 0;
+}
+
+.inner-hero-banner-section {
+	position: relative;
+}
+.banner-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.banner-content h1 {
+	font-family: "MetaPro-Thin";
+	font-weight: normal;
+	font-size: 5rem;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/*objectives page style*/
+
+.objectives_list {	
+	list-style: square;
+	padding-left: 20px;
+}
+.objectives_list li {
+	font-family: "MetaPro-Light";
+	font-size: 16px;
+	line-height: 22px;
+	color: #fff;
+	padding: 5px 0 10px;
+}
+.objectives_list li::marker {
+    color: #c19b67;   /* Changes ONLY the square color */
+    font-size: 2rem; /* Changes ONLY the square size */
+}
+
+/*Vision Page style*/
+
+.vision_list {	
+	list-style: square;
+	padding-left: 20px;
+}
+.vision_list li {
+	font-family: "MetaPro-Light";
+	font-size: 16px;
+	line-height: 22px;
+	color: #fff;
+	padding: 5px 0 10px;
+}
+.vision_list li::marker {
+    color: #c19b67;   /* Changes ONLY the square color */
+    font-size: 2rem; /* Changes ONLY the square size */
+}
+.vision-right-img {
+	position: absolute;
+	right: 0;
+	top: 0;
+	max-width: 909px;
+	width: 50%;
+	z-index: -1;
+}
+
+/*Visionary section style*/
+.visionary-btm-sec {
+	background-color: #0f0f0f;
+	padding: 50px 30px;
+}
+.visionary-btm-col {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 0 20px;
+}
+.visionary-btm-col img {
+	margin-right: 20px;
+}
+.visionary-btm-col h4 {
+	color: #bb9c59;
+	font-weight: bold;
+}
+
+/* Horizontal scroll for mobile devices */
+@media (max-width: 991px) {
+    .subnav-wrapper .nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sub-link {
+        white-space: nowrap;
+    }
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .icon-circle {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .action-label {
+        display: none; /* Hide labels on small screens to save space */
+    }
+    .banner-social-wrapper {
+        me-2; /* Reduce margin on mobile */
+    }
+}
+@media (max-width: 767px) {
+	.inner_banner_sec img {
+		height: 50vh;
+		object-fit: cover;
+	}
+	.banner-content h1 {
+		font-size: 3rem;
+	}
+	.objectives_list li {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.vision_list li {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.vision-right-img {
+		position: static;
+		width: 100%;
+	}
+}
