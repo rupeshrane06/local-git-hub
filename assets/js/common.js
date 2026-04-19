@@ -1,43 +1,43 @@
 // ===============================
-// AUTO APPLY NUMBER FONT (SAFE VERSION)
+// AUTO APPLY NUMBER FONT (SAFE)
 // ===============================
-// function applyNumberFont() {
+function applyNumberFont() {
 
-//     const elements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, span");
+    const elements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, span");
 
-//     elements.forEach(el => {
+    elements.forEach(el => {
 
-//         el.childNodes.forEach(node => {
+        el.childNodes.forEach(node => {
 
-//             if (node.nodeType === 3) { // TEXT NODE
+            if (node.nodeType === 3) {
 
-//                 const text = node.textContent;
+                const text = node.textContent;
 
-//                 if (/\d/.test(text)) {
+                if (/\d/.test(text)) {
 
-//                     const frag = document.createDocumentFragment();
+                    const frag = document.createDocumentFragment();
 
-//                     text.split(/(\d+)/).forEach(part => {
+                    text.split(/(\d+)/).forEach(part => {
 
-//                         if (/^\d+$/.test(part)) {
-//                             const num = document.createElement("small"); // your requirement
-//                             num.className = "num";
-//                             num.textContent = part;
-//                             frag.appendChild(num);
-//                         } else {
-//                             frag.appendChild(document.createTextNode(part));
-//                         }
+                        if (/^\d+$/.test(part)) {
+                            const num = document.createElement("small");
+                            num.className = "num";
+                            num.textContent = part;
+                            frag.appendChild(num);
+                        } else {
+                            frag.appendChild(document.createTextNode(part));
+                        }
 
-//                     });
+                    });
 
-//                     node.replaceWith(frag);
-//                 }
-//             }
+                    node.replaceWith(frag);
+                }
+            }
 
-//         });
+        });
 
-//     });
-// }
+    });
+}
 
 
 // ===============================
@@ -47,9 +47,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 // ===============================
-// HERO BANNER ANIMATION
+// HERO BANNER ANIMATION (SAFE)
 // ===============================
 function initHeroAnimation() {
+
+    if (!document.querySelector(".hero-banner-section")) return;
 
     const ctx = gsap.context(() => {
 
@@ -81,9 +83,11 @@ function initHeroAnimation() {
 
 
 // ===============================
-// FEATURE SECTION ANIMATION
+// FEATURE SECTION ANIMATION (SAFE)
 // ===============================
 function initFeatureAnimation() {
+
+    if (!document.querySelector(".stats-feature-section")) return;
 
     let tl = gsap.timeline({
         scrollTrigger: {
@@ -121,7 +125,9 @@ function initFeatureAnimation() {
 const swiperInstances = [];
 
 function initAllSwipers() {
+
     document.querySelectorAll('.projectSwiper').forEach((el) => {
+
         const s = new Swiper(el, {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -134,6 +140,7 @@ function initAllSwipers() {
                 1024: { slidesPerView: 3 }
             }
         });
+
         swiperInstances.push(s);
     });
 }
@@ -163,6 +170,9 @@ function switchTab(event, tabId) {
 // GALLERY SWIPER
 // ===============================
 function initGallery() {
+
+    if (!document.querySelector('.mainGallerySwiper')) return;
+
     new Swiper('.mainGallerySwiper', {
         loop: true,
         speed: 1000,
@@ -187,9 +197,46 @@ function initGallery() {
 // ===============================
 document.addEventListener("DOMContentLoaded", function () {
 
+    // ===============================
+    // TEXT ROTATION (YOUR REQUIREMENT)
+    // ===============================
+    const items = document.querySelectorAll(".home-banner-text span");
+
+    if (items.length >= 3) {
+
+        items[0].classList.add("pos-1");
+        items[1].classList.add("pos-2");
+        items[2].classList.add("pos-3");
+
+        setTimeout(() => {
+
+            setInterval(() => {
+
+                items.forEach(item => {
+
+                    if (item.classList.contains("pos-1")) {
+                        item.classList.replace("pos-1", "pos-3");
+                    } else if (item.classList.contains("pos-2")) {
+                        item.classList.replace("pos-2", "pos-1");
+                    } else if (item.classList.contains("pos-3")) {
+                        item.classList.replace("pos-3", "pos-2");
+                    }
+
+                });
+
+            }, 3000);
+
+        }, 500);
+    }
+
+
+    // ===============================
+    // SCROLL BUTTON + NAVBAR
+    // ===============================
     const scrollBtn = document.getElementById('scroll-action-btn');
     const scrollIcon = document.getElementById('scroll-icon');
     const navbar = document.querySelector('.navbar');
+    const bannersec = document.querySelector('.banner_sec');
 
     if (scrollBtn) {
         scrollBtn.addEventListener('click', function () {
@@ -198,9 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 const nextSection = document.querySelector('.hero-banner-section')?.nextElementSibling;
-                if (nextSection) {
-                    nextSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
@@ -215,16 +260,39 @@ document.addEventListener("DOMContentLoaded", function () {
             navbar.classList.toggle('nav-scrolled', window.scrollY > 300);
         }
 
+        if (bannersec) {
+            bannersec.classList.toggle('banner-scrolled', window.scrollY > 300);
+        }
     });
 
+
+    // ===============================
+    // IMPORTANT ORDER (FIX AOS ISSUE)
+    // ===============================
+
+    // 1️⃣ Modify DOM first
+    applyNumberFont();
+
+    // 2️⃣ Init AOS AFTER DOM ready
     if (typeof AOS !== "undefined") {
         AOS.init({
-            duration: 2000,
+            duration: 1200,
             offset: 100,
-            once: true
+            // once: true
         });
     }
 
+    // 3️⃣ Refresh after everything
+    setTimeout(() => {
+        if (typeof AOS !== "undefined") {
+            AOS.refreshHard();
+        }
+    }, 300);
+
+
+    // ===============================
+    // INIT ALL FEATURES
+    // ===============================
     initHeroAnimation();
     initFeatureAnimation();
     initAllSwipers();
@@ -232,18 +300,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ScrollTrigger.refresh();
 
-    setTimeout(() => {
-        if (typeof AOS !== "undefined") {
-            AOS.refreshHard();
-        }
-    }, 500);
 
-    // Apply number font AFTER everything loads
-    setTimeout(() => {
-        applyNumberFont();
-    }, 300);
-
-    // Accordion FIX (moved inside DOMContentLoaded)
+    // ===============================
+    // ACCORDION FIX
+    // ===============================
     const accordionItems = document.querySelectorAll(".accordion-item");
 
     document.querySelectorAll(".accordion-collapse").forEach(collapse => {

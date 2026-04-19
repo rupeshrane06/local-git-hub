@@ -1,35 +1,3 @@
-.scroll-btn-bottom {
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    z-index: 9999;
-    width: 45px;
-    height: 45px;
-    background-color: #fff; /* White background as seen in image */
-    border-radius: 8px; /* Slightly rounded corners */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.scroll-btn-bottom img {
-    width: 54px;
-    transition: transform 0.4s ease;
-}
-
-/* Class to rotate arrow when it becomes "Back to Top" */
-.rotate-180 {
-    transform: rotate(180deg);
-}
-
-.scroll-btn-bottom:hover {
-    transform: translateY(-5px);
-    background-color: #f8f8f8;
-}
-
 
 /* HERO */
 .hero-banner-section {
@@ -42,10 +10,10 @@
 /* CIRCLE VIDEO */
 .banner_sec {
     position: fixed;
-    top: 45%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    width: 22vw;
+    width: 20vw;
     aspect-ratio: 4 / 5;
     border-radius: 500px;
     border: 15px solid rgba(119, 90, 48, 0.4);
@@ -55,7 +23,18 @@
     pointer-events: none; /* 🔥 fix click issue */
     will-change: transform, opacity;
 }
-
+.banner_sec.banner-scrolled {
+    position: relative;
+}
+.banner_sec.banner-scrolled:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 .banner_sec video {
     width: 100%;
     height: 100%;
@@ -89,6 +68,48 @@
     font-size: 2.5rem;
     color: #fff;
 }
+
+.home-banner-text {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+
+.home-banner-text span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* 🔥 STATES */
+
+/* TOP (Active) */
+.home-banner-text span.pos-1 {
+    transform: translateY(0);
+    opacity: 1;
+    font-size: 100%;
+    z-index: 3;
+}
+
+/* MIDDLE */
+.home-banner-text span.pos-2 {
+    transform: translateY(20px);
+    opacity: 0.3;
+    font-size: 90%;
+    z-index: 2;
+}
+
+/* BOTTOM */
+.home-banner-text span.pos-3 {
+    transform: translateY(40px);
+    opacity: 0.1;
+    font-size: 80%;
+    z-index: 1;
+}
+
+   
 
 .sec-scroll {
     position: absolute;
@@ -237,14 +258,21 @@
     font-family: "MetaPro-Bold";
     font-weight: normal;
 }
+.abt-sect-stats-wrap h2 {
+    padding: 10px 0;
+}
 .abt-sect-stats-wrap h2 span {
-    font-size: 12px;
+    font-size: 14px;
+    text-transform: none;
 }
 .abt-sect-stats-wrap .img_txt {
     position: absolute;
     bottom: 5%;
     left: 10%;
     width: 80%;
+}
+.bg-dakr-gray {
+    background-color: #221f20;
 }
 /*Project details section style*/
 .project-section {
@@ -348,7 +376,7 @@
     position: absolute;
     inset: 0;
     z-index: 5;
-    opacity: 0;
+    opacity: 0.2;
     transform: translateY(40px);
     transition: none;
 }
@@ -386,7 +414,9 @@
     width: 100%;
     overflow: hidden;
 }
-
+.text-shadow-black {
+    text-shadow: 0 0 10px #000;
+}
 /* Swiper Slide & Image */
 .swiper-slide {
     position: relative;
@@ -599,12 +629,40 @@
         font-size: 1.4rem;
     }   
 
+    /*p.home-banner-text.animate_txt span {
+        font-size: 12px;
+    }*/
+
+    .home-banner-text {
+        height: 100px;
+    }
+
+
+    /* 🔥 STATES */
+
+    /* TOP (Active) */
+    .home-banner-text span.pos-1 {
+        transform: translateY(0);
+    }
+
+    /* MIDDLE */
+    .home-banner-text span.pos-2 {
+        transform: translateY(30px);
+    }
+
+    /* BOTTOM */
+    .home-banner-text span.pos-3 {
+        transform: translateY(50px);
+    }
     .about-section {
         padding: 30px 0;
     }
     .heading_txt {
         padding: 0 10px;
     }
+
+
+
     .abt-sect-stats-wrap img {
         width: 100%;
     }

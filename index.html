@@ -21,7 +21,9 @@
 
 </head>
 <body class="">
-    
+    <a href="javascript:void(0)" id="scroll-action-btn" class="scroll-btn-bottom">
+            <img src="assets/images/btt-scroller-icon.png" alt="Scroll Icon" id="scroll-icon">
+        </a>
     <header>
         <nav class="navbar navbar-expand-lg text-white">
             <div class="container">
@@ -82,9 +84,7 @@
     </header>
     
     <main id="site-main">
-        <a href="javascript:void(0)" id="scroll-action-btn" class="scroll-btn-bottom">
-            <img src="assets/images/btt-scroller-icon.png" alt="Scroll Icon" id="scroll-icon">
-        </a>
+        
         <section id="hero-banner" class="hero-banner-section">
     
             <div class="banner_sec">
@@ -96,8 +96,12 @@
                 <h1>
                     Welcome to Harlequin 
                     <span>The Epitome of Navi Mumbai Living</span>
-                    Harlequin Infrastructures Developers has defined the art of living.
                 </h1>
+                <p class="home-banner-text animate_txt">
+                    <span>Harlequin Infrastructures Developers has defined the art of living.</span>
+                    <span>From bespoke luxury residences to visionary commercial spaces,</span>
+                    <span>we craft environments where life unfolds in elegance.</span>
+                </p>
             </div>
 
             <!-- <div class="sec-scroll" id="begin-scroll" style="cursor: pointer;">
@@ -149,11 +153,11 @@
                 <div class="container-fluid p-4 abt-sect-stats-wrap">
                     <div class="row g-3 align-items-stretch">
                         
-                        <div class="col-md-2 d-flex flex-column gap-3" data-aos="fade-up">
-                            <div class="bg-secondary p-3 flex-grow-1 d-flex flex-column justify-content-center">
+                        <div class="col-md-3 d-flex flex-column gap-3" data-aos="fade-up">
+                            <div class="bg-dakr-gray align-items-center flex-grow-1 d-flex flex-column justify-content-center">
                                 <h2 class="">2K+ <span>Project Completed</span></h2>
                             </div>
-                            <div class="bg-secondary p-3 flex-grow-1 d-flex flex-column justify-content-center">
+                            <div class="bg-dakr-gray align-items-center flex-grow-1 d-flex flex-column justify-content-center">
                                 <h2 class="">1.5K+ <span>Customer Satisfied</span></h2>
                             </div>
                         </div>
@@ -161,24 +165,24 @@
                         <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                             <div class="h-100 position-relative">
                                 <img src="assets/images/home-about-sect-img-1.jpg" class="img-fluid h-100 object-fit-cover" alt="Building Projection">
-                                <span class="img_txt">Lorem ipsum dolor sit amet consectetur</span>
+                                <!-- <span class="img_txt">Lorem ipsum dolor sit amet consectetur</span> -->
                             </div>
                         </div>
 
-                        <div class="col-md-2 d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay="200">
-                            <div class="bg-secondary p-3 flex-grow-1 d-flex flex-column justify-content-center">
+                        <div class="col-md-3 d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay="200">
+                            <div class="bg-dakr-gray align-items-center flex-grow-1 d-flex flex-column justify-content-center">
                                 <h2 class="">360+ <span>Expert Team Members</span></h2>
                             </div>
-                            <div class="bg-secondary p-3 flex-grow-1 d-flex flex-column justify-content-center">
+                            <div class="bg-dakr-gray align-items-center flex-grow-1 d-flex flex-column justify-content-center">
                                 <h2 class="">85+ <span>Awards Winner</span></h2>
                                 
                             </div>
                         </div>
 
-                        <div class="col-md-5" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
                             <div class="position-relative h-100">
                                 <img src="assets/images/home-about-sect-img-2.jpg" class="img-fluid h-100 object-fit-cover" alt="Pool Area">
-                                <span class="img_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+                                <!-- <span class="img_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span> -->
                             </div>
                         </div>
 
@@ -238,7 +242,7 @@
                     </div>
                 </div>
 
-                <div id="completed" class="tab-content d-none" data-aos="fade-up" data-aos-delay="200">
+                <!-- <div id="completed" class="tab-content d-none" data-aos="fade-up" data-aos-delay="200">
                     <div class="swiper projectSwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -254,9 +258,9 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div id="upcoming" class="tab-content d-none" data-aos="fade-up" data-aos-delay="200">
+                <!-- <div id="upcoming" class="tab-content d-none" data-aos="fade-up" data-aos-delay="200">
                     <div class="swiper projectSwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -272,7 +276,7 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section>
@@ -280,7 +284,7 @@
             <div class="container position-relative">
                 <div class="reveal-container py-5 text-center">
 
-                    <div class="reveal-box mx-auto">
+                    <div class="reveal-box mx-auto" data-aos="fade-up">
                         
                         <!-- Sketch Layer -->
                         <div class="sketch-layer">
@@ -297,17 +301,17 @@
 
                     <!-- Content -->
                     <div class="feature-section-content">
-                        <h2 class=" mb-5">
+                        <h2 class=" mb-5" data-aos="fade-up" data-aos-delay="100">
                             <span>Our Featured Project</span>
                             THE SMARTEST SQUARE FEET IN TOWN
                         </h2>
 
-                        <div class="floating-info left-info text-start">
-                            <h3 class="h4">LOREM IPSUMING ELIT <span>Pushpak Nagar</span></h3>
-                            <p class="small">2 BHK, 3 BHK & 4 BHK<br>STARTING AT XXX* ONW.</p>
+                        <div class="floating-info left-info text-start" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="h4">HARLEQUIN TULIP <span>Plot no. 25 Sector 07<br>Pushpak Nagar</span></h3>
+                            <!-- <p class="small">2 BHK, 3 BHK & 4 BHK<br>STARTING AT XXX* ONW.</p> -->
                         </div>
 
-                        <div class="floating-info right-info text-end">
+                        <div class="floating-info right-info text-end" data-aos="fade-up" data-aos-delay="300">
                             <p class="small opacity-50">
                                 WE PROVIDE 24/7 SERVICE<br>
                                 QUALIFIED AGENTS<br>
@@ -321,22 +325,33 @@
             </div>
         </section>
         <section class="gallery-slider-section">
+            <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white slider-content position-absolute top-custom-20 start-50 translate-middle-x">
+                <h2 class="text-shadow-black" data-aos="fade-up">
+                    <span>Project Gallery</span>
+                    HARLEQUIN INFRASTRUCTURES DEVELOPERS IS ONE OF THE RECENTLY FORMED PARTNERSHIP FIRM IN NAVI MUMBAI ENGAGED IN OFFERING THE CLIENTS WITH EFFECTUAL RESIDENTIAL AND COMMERCIAL REAL ESTATE SERVICES.
+                </h2>
+            </div>
             <div class="swiper mainGallerySwiper h-100">
                 <div class="swiper-wrapper">
                     
                     <div class="swiper-slide position-relative">
                         <img src="assets/images/home-gallery-img1.jpg" alt="Pool Gallery" class="swiper-image img-fluid w-100 h-100">
-                        
-                        <div class="container h-100 d-flex flex-column justify-content-start align-items-center text-center text-white slider-content position-absolute top-custom-20 start-50 translate-middle-x">
-                            <h2 class="">
-                                <span>Project Gallery</span>
-                                HARLEQUIN INFRASTRUCTURES DEVELOPERS IS ONE OF THE RECENTLY FORMED PARTNERSHIP FIRM IN NAVI MUMBAI ENGAGED IN OFFERING THE CLIENTS WITH EFFECTUAL RESIDENTIAL AND COMMERCIAL REAL ESTATE SERVICES.
-                            </h2>
-                        </div>
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="assets/images/home-gallery-img1.jpg" alt="Lobby Gallery" class="swiper-image img-fluid w-100 h-100">
+                        <img src="assets/images/home-gallery-img2.jpg" alt="Lobby Gallery" class="swiper-image img-fluid w-100 h-100">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="assets/images/home-gallery-img3.jpg" alt="Lobby Gallery" class="swiper-image img-fluid w-100 h-100">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="assets/images/home-gallery-img4.jpg" alt="Lobby Gallery" class="swiper-image img-fluid w-100 h-100">
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="assets/images/home-gallery-img5.jpg" alt="Lobby Gallery" class="swiper-image img-fluid w-100 h-100">
                     </div>
 
                 </div>
@@ -360,7 +375,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-7 col-xl-7">
+                    <div class="col-lg-7 col-xl-7" data-aos="fade-left">
                         <div class="video-container position-relative">
                             <img src="assets/images/virtual-tour-bg.jpg" alt="Virtual Tour" class="img-fluid w-100">
                             
@@ -381,7 +396,7 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-right">
                         <div class="enquiry-img-wrapper">
                             <img src="assets/images/home-btm-form-bg.jpg" alt="City Skyline" class="w-100 h-100 object-fit-cover">
                         </div>

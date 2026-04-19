@@ -213,6 +213,37 @@ header {
     color: white;
 }
 
+.scroll-btn-bottom {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    background-color: #fff; /* White background as seen in image */
+    border-radius: 8px; /* Slightly rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.scroll-btn-bottom img {
+    width: 54px;
+    transition: transform 0.4s ease;
+}
+
+/* Class to rotate arrow when it becomes "Back to Top" */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.scroll-btn-bottom:hover {
+    transform: translateY(-5px);
+    background-color: #f8f8f8;
+}
 
 /* Optional: Show dropdown on hover (Desktop only) */
 @media (min-width: 992px) {
@@ -340,6 +371,9 @@ header {
     }
     .footer-contact-item {
         height: auto;
+    }
+    .scroll-btn-bottom {
+        display: none;
     }
 
 }

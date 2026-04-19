@@ -75,7 +75,7 @@
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 5px 10px;
+    padding: 10px 10px 5px 10px;
     transition: all 0.3s ease;
     position: relative;
     border-bottom: 4px solid transparent;
@@ -155,7 +155,7 @@
     overflow: hidden;
 }
 .inner_banner_sec img {
-    animation: img-zoom 15s linear infinite;
+    animation: img-zoom 40s linear infinite;
 }
 @keyframes img-zoom {
     0% {
