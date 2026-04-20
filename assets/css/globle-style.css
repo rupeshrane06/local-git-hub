@@ -248,6 +248,10 @@ header {
 /* Container positioning */
 .banner-social-wrapper {
     z-index: 1000;
+    position: fixed;
+    bottom: 20%;
+    right: 2%;
+    transform: translateY(-50%);
 }
 /*.banner-social-wrapper:after {
     content: "";
@@ -293,6 +297,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin: 20px auto;
+    position: relative;
 }
 
 .action-label {
@@ -305,6 +311,10 @@ header {
     letter-spacing: 1px;
     white-space: nowrap;
     text-transform: uppercase;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .action-item:hover .action-label {
     display: block;
@@ -398,6 +408,20 @@ header {
     .footer-nav .nav-link {
         padding: 5px 10px;
     }
+    .navbar-toggler {
+        filter: invert(1);
+        opacity: 1;
+        order: 3;
+        outline: none;
+    }
+    .navbar-toggler-icon {
+        width: 30px;
+        height: 22px;
+    }
+    .form-icon {
+        margin-right: 0;
+        margin-left: auto;
+    }
 }
 
 @media (max-width:  767px){
@@ -415,16 +439,7 @@ header {
         line-height: 18px;
         padding-bottom: 10px;
     }
-    .navbar-toggler {
-        filter: invert(1);
-        opacity: 1;
-        order: 3;
-        outline: none;
-    }
-    .navbar-toggler-icon {
-        width: 30px;
-        height: 22px;
-    }
+    
     .navbar-collapse {
         background-color: #000;
         position: absolute;
@@ -436,10 +451,6 @@ header {
     .project-logo, .nav-scrolled .project-logo {
         width: 15%;
     }
-    .form-icon {
-        margin-right: 0;
-        margin-left: auto;
-    }
     .footer-contact-item {
         height: auto;
     }
@@ -447,26 +458,26 @@ header {
         display: none;
     }
     .banner-social-wrapper {
-        position: fixed !important;
         bottom: 0;
         left: 0;
-        right: auto !important;
+        right: auto;
         width: 100%;
-        transform: translateY(0) !important;
-        top: auto !important;
-        flex-direction: row !important;
-        justify-content: space-around;
-        align-items: center !important;
+        transform: none;
         background-color: #000;
-        padding: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
-    .icon-circle {
-        width: 25px;
-        height: 25px;
-        font-size: 1rem;
+    .action-item {
+        margin: 5px auto;
     }
+    
     .action-label {
         display: none; /* Hide labels on small screens to save space */
+    }
+    .icon-circle {
+        width: 30px;
+        height: 30px;
     }
 
 }
