@@ -1,0 +1,685 @@
+
+/* HERO */
+.hero-banner-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: url('../images/home-banner-bg.jpg') no-repeat center/cover;
+}
+
+/* CIRCLE VIDEO */
+.banner_sec {
+    position: fixed;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 19vw;
+    height: 26vw; /* initial vertical oval */
+    border-radius: 500px;
+    overflow: hidden;
+    z-index: 5;
+
+    pointer-events: none; /* 🔥 fix click issue */
+    will-change: transform, opacity;
+}
+.banner-border {
+    position: absolute;
+    inset: 0;
+    border: 15px solid rgba(255,255,255,0.4);
+    border-radius: 500px;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.2s linear; /* smooth fallback */
+}
+.banner_sec.banner-scrolled {
+    position: relative;
+}
+.banner_sec.banner-scrolled:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.banner_sec video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*transform: scale(1.3);*/
+}
+
+/* TEXT (UNCHANGED FONTS) */
+.banner-content {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.banner-content h1 {
+    font-family: "MetaPro-Cond"; /* ✅ preserved */
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px #000;
+    font-weight: normal;
+}
+
+.banner-content h1 span {
+    font-family: "MetaPro-CondBold"; /* ✅ preserved */
+    display: block;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.home-banner-text {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+
+.home-banner-text {
+    font-size: 22px;
+}
+.home-banner-text span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* 🔥 STATES */
+
+/* TOP (Active) */
+.home-banner-text span.pos-1 {
+    transform: translateY(0);
+    opacity: 1;
+    font-size: 100%;
+    z-index: 3;
+}
+
+/* MIDDLE */
+.home-banner-text span.pos-2 {
+    transform: translateY(20px);
+    opacity: 0.3;
+    font-size: 90%;
+    z-index: 2;
+}
+
+/* BOTTOM */
+.home-banner-text span.pos-3 {
+    transform: translateY(40px);
+    opacity: 0.1;
+    font-size: 80%;
+    z-index: 1;
+}
+
+   
+
+.sec-scroll {
+    position: absolute;
+    bottom: 3%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.sec-scroll:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 5%;
+    width: 30%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.sec-scroll img {
+    max-width: 18px;
+    width: 100%;
+    margin: 0 auto;
+}
+.sec-scroll span {
+    font-family: "MetaPro-Cond";
+    font-size: 12px;
+    line-height: 15px;
+    color: #bb9c59;
+    display: block;
+    width: 80%;
+    margin-right: -80%;
+}
+
+
+
+
+/*about us section style*/
+.about-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: #000;
+}
+.about-section .container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    background: url(../images/home-page-abt-sec-pattern.png) no-repeat top left;
+    background-size: 20%;
+    width: 20%;
+    height: 20%;
+}
+.about-section .container:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    background: url(../images/home-page-abt-sec-pattern.png) no-repeat bottom right;
+    background-size: 20%;
+    width: 20%;
+    height: 20%;
+}
+.heading_txt {
+    padding: 0 50px;
+}
+.abt-sect-stats-wrap h2, .abt-sect-stats-wrap h2 span {
+    font-family: "MetaPro-Bold";
+    font-weight: normal;
+    line-height: 1.2;
+}
+.abt-sect-stats-wrap h2 {
+    padding: 10px 0;
+}
+.abt-sect-stats-wrap h2 span {
+    font-size: 14px;
+    text-transform: none;
+}
+.abt-sect-stats-wrap .img_txt {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    width: 80%;
+}
+.bg-dakr-gray {
+    background-color: #221f20;
+}
+/*Project details section style*/
+.project-section {
+    padding: 100px 0;
+    background-color: #0f0f0f;
+}
+.btn-tab {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #c19b67;
+    padding: 10px 30px;
+    transition: 0.3s;
+}
+.btn-tab.active {
+    background: #c19b67;
+    color: #000;
+}
+.main-project-card {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+.project-card {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    text-align: left;
+}
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+.project-overlay h3 {
+    text-shadow: 0 0 10px #000;
+}
+.project-overlay h3 .num {
+    font-weight: 300;
+}
+.project-overlay p {
+    padding: 10px 0;
+}
+.project-overlay p span {
+    font-size: 12px;
+}
+.btn-details {
+    background: #c19b67;
+    border: none;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+
+/*Featured Project Stats Cards */
+.stats-feature-section {
+    position: relative;
+    height: 100vh; /* 🔥 IMPORTANT for scroll */
+    background: #000;
+}
+
+.reveal-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* FIXED IMAGE SIZE */
+.reveal-box {
+    position: relative;
+    max-width: 628px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* NO RESIZE */
+.reveal-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* SKETCH */
+.sketch-layer,
+.real-layer {
+    position: absolute;
+    inset: 0;
+}
+
+/* SKETCH fully visible initially */
+.sketch-layer {
+    z-index: 2;
+    clip-path: inset(0% 0 0 0);
+}
+
+/* REAL hidden initially */
+.real-layer {
+    z-index: 1;
+    clip-path: inset(100% 0 0 0);
+}
+
+/* TEXT */
+.feature-section-content {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.2;
+    transform: translateY(40px);
+    transition: none;
+}
+
+/* POSITION FIX LIKE YOUR IMAGE */
+.feature-section-content h2 {
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    text-align: left;
+    width: 22%;
+}
+
+.left-info {
+    position: absolute;
+    bottom: 15%;
+    left: 6%;
+}
+.left-info .num {
+    font-weight: 300;
+}
+
+.right-info {
+    position: absolute;
+    bottom: 15%;
+    right: 6%;
+    text-align: right;
+}
+
+
+/* Heading style */
+
+
+/*Gallery section style*/
+.gallery-slider-section {
+    position: relative;
+    height: 100vh; /* Takes full viewport height */
+    width: 100%;
+    overflow: hidden;
+}
+.text-shadow-black {
+    text-shadow: 0 0 10px #000;
+}
+/* Swiper Slide & Image */
+.swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-image {
+    object-fit: cover; /* Ensures image fills the slide without stretching */
+    z-index: 1;
+}
+
+/* Dark Overlay for Text Readability */
+
+
+/* Content Styling */
+.slider-content {
+    z-index: 3;
+    pointer-events: none; /* Allows user to click navigation arrows behind text */
+    max-width: 900px;
+    padding: 0 20px;
+}
+.top-custom-20 {
+    top: 20% !important;
+}
+
+.tracking-widest { 
+    letter-spacing: 3px; 
+}
+
+
+/* Swiper Custom Navigation Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 50px;
+    padding: 25px;
+    transform: scale(0.7);
+    transition: 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(255,255,255,1);
+    color: #000;
+}
+
+/* Active Slide Animation (Optional) */
+.swiper-slide-active .slider-content h2 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*360 section style*/
+/* Container Background */
+.walkthrough-section {
+    background-color: #0b0b0b;
+    overflow: hidden;
+}
+
+/* Typography */
+.tracking-widest {
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+}
+
+.walkthrough-content h2 {
+    line-height: 1.2;
+}
+
+
+
+/* Video Side Styling */
+.video-container {
+    height: 100%;
+}
+
+.video-container img {
+    height: 100%;
+    min-height: 400px; /* Ensures height on mobile */
+    object-fit: cover;
+    display: block;
+}
+
+/* Play Button Animation */
+.play-btn {
+    transition: transform 0.3s ease;
+    display: block;
+    filter: drop-shadow(0px 0px 20px rgba(0,0,0,0.5));
+}
+
+.play-btn:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 991px) {
+    .walkthrough-content {
+        text-align: center;
+    }
+    
+    .video-container img {
+        min-height: 300px;
+    }
+}
+
+/*Contact section style*/
+/* Section Setup */
+.enquiry-section {
+    min-height: 80vh;
+}
+
+.enquiry-img-wrapper {
+    height: 100%;
+    min-height: 400px; /* Ensures image shows on mobile */
+}
+
+.enquiry-img-wrapper img {
+    display: block;
+}
+
+/* Typography */
+.tracking-widest {
+    letter-spacing: 3px;
+}
+
+
+
+/* Custom Form Inputs */
+.form-control-custom {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control-custom:focus {
+    outline: none;
+    border-bottom-color: #fff;
+}
+
+/* Checkbox Style */
+.form-check-input {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 0;
+}
+
+.form-check-input:checked {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/* Enquire Button */
+.btn-enquire {
+    background-color: #fff;
+    color: #000;
+    border-radius: 0;
+    padding: 12px 35px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-enquire:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    
+
+    .banner_sec {
+        top: 38%;
+        width: 70vw;
+        /*aspect-ratio: 4 / 7;*/
+    }
+    .banner-border {
+        border: 8px solid rgba(255, 255, 255, 0.4);
+    }
+    .banner-content {
+        bottom: 10%;
+    }
+    .banner-content h1 span {
+        font-size: 1.5rem;
+    }   
+
+    /*p.home-banner-text.animate_txt span {
+        font-size: 12px;
+    }*/
+
+    .home-banner-text {
+        height: 100px;
+        font-size: 18px;
+    }
+
+
+    /* 🔥 STATES */
+
+    /* TOP (Active) */
+    .home-banner-text span.pos-1 {
+        transform: translateY(0);
+    }
+
+    /* MIDDLE */
+    .home-banner-text span.pos-2 {
+        transform: translateY(30px);
+    }
+
+    /* BOTTOM */
+    .home-banner-text span.pos-3 {
+        transform: translateY(50px);
+    }
+    .about-section {
+        padding: 30px 0;
+    }
+    .heading_txt {
+        padding: 0 10px;
+    }
+
+
+
+    .abt-sect-stats-wrap img {
+        width: 100%;
+    }
+    .project-section {
+        padding: 30px 0;
+    }
+    .btn-tab {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+    .project-card {
+        height: auto;
+    }
+    .project-card img {
+        width: 100%;
+        height: auto;
+        object-fit: none;
+    }
+    .swiper-pagination-bullet {
+        background: transparent;
+        border: 2px solid #fff;
+        width: 15px;
+        height: 15px;
+    }
+    .swiper-pagination-bullet-active {
+        background: #fff;
+        border: 2px solid #fff;
+    }
+
+    .reveal-box {
+        max-width: 250px;
+    }
+
+    /* POSITION FIX LIKE YOUR IMAGE */
+    .feature-section-content h2 {
+        top: 0%;
+        left: 6%;
+        width: 100%;
+    }
+
+    .left-info {
+        bottom: auto;
+        top: 15%;
+    }
+
+    .right-info {
+        position: absolute;
+        bottom: 15%;
+        right: 6%;
+        text-align: right;
+    }
+
+    .slider-content h2 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .slider-content h2 span {
+        font-size: 0.8rem;
+    }
+
+    .stats-feature-section {
+        overflow: hidden;
+    }
+
+
+
+
+
+}
